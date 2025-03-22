@@ -1,7 +1,5 @@
 # ToDoApp Using DOTNET
-Here’s a **README.md** file for your **ToDoApp_DOTNET** project:  
 
-```md
 # ToDoApp_DOTNET  
 
 A simple **To-Do List** web application built using **ASP.NET Core MVC**. This app allows users to create, edit, delete, and mark tasks as completed. It also features email notifications for task reminders.
@@ -59,14 +57,7 @@ To enable email notifications, add your **SMTP settings** in `appsettings.json`:
 }
 ```
 
----
-
-## 📷 Screenshots  
- *Coming soon...*  
-
----
-
-## 💡 Author  
+## Author  
 👩‍💻 **Janvi Bhanushali**  
 🔗 [GitHub](https://github.com/JanviBh249) | ✉️ [Email](mailto:janvibhanushali249@gmail.com)  
 
