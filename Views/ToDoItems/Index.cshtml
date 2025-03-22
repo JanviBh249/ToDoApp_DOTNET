@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ToDoApp.Models.ToDoItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.IsCompleted)</th>
+            <th>@Html.DisplayNameFor(model => model.CreatedAt)</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="@((item.DueDate < DateTime.Now) ? "table-danger" : "")">
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>
+                    <form asp-action="ToggleComplete" method="post">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="checkbox" name="IsCompleted" value="true" @(item.IsCompleted ? "checked" : "") onchange="this.form.submit();" />
+                    </form>
+                </td>
+                <td>@item.CreatedAt.ToString("g")</td>
+                <td>@Html.DisplayFor(modelItem => item.Priority)</td>
+                <td>@item.DueDate.ToShortDateString()</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td> <!-- Email Column -->
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
