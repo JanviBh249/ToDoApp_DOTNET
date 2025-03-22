@@ -1,6 +1,5 @@
 # ToDoApp Using DOTNET
 
-# ToDoApp_DOTNET  
 
 A simple **To-Do List** web application built using **ASP.NET Core MVC**. This app allows users to create, edit, delete, and mark tasks as completed. It also features email notifications for task reminders.
 
